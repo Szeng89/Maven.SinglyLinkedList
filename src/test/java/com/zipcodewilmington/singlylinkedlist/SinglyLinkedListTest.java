@@ -40,5 +40,19 @@ public class SinglyLinkedListTest {
         Assert.assertFalse(list.contains(str2));
     }
 
+    @Test
+    public void findTest() {
+        SinglyLinkedList<String> list = new SinglyLinkedList<>();
+        String str1 = "Zip";
+        String str2 = "Shijin";
+        String str3 = "Code";
+
+        list.addLast(str1);
+        list.addLast(str2);
+        list.addLast(str3);
+
+        Assert.assertEquals(2, list.find(str3));
+    }
+
 
 }

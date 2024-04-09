@@ -86,4 +86,20 @@ public class SinglyLinkedList<T> {
         }
         return false;
     }
+    public int find(T lookingToFind) {
+        // Start at the beginning of list
+        Node node = head;
+
+        int index = 0;
+
+        while (node != null) {
+            if (node.data == lookingToFind) {
+                return index;
+            }
+            index++;
+            node = node.next;
+        }
+        return -1;
+    }
+
 }
