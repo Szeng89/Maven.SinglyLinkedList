@@ -68,5 +68,22 @@ public class SinglyLinkedListTest {
         Assert.assertEquals(3, list.size());
     }
 
+    @Test
+    public void copyTest() {
+        SinglyLinkedList<String> list = new SinglyLinkedList<>();
+        String str1 = "Zip";
+        String str2 = "Shijin";
+        String str3 = "Code";
+
+        list.addFirst(str1);
+        list.addFirst(str2);
+        list.addFirst(str3);
+
+        SinglyLinkedList<String> copied = list.copy();
+
+        Assert.assertEquals(list.get(0), copied.get(0));
+
+    }
+
 
 }

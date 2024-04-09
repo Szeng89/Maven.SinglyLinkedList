@@ -124,4 +124,17 @@ public class SinglyLinkedList<T> {
         }
         return count;
     }
+    public SinglyLinkedList<T> copy() {
+        SinglyLinkedList<T> copiedList = new SinglyLinkedList<>();
+
+        //start at the beggining of original
+        Node currentNode = head;
+
+        //traverse the OG list
+        while (currentNode != null) {
+            copiedList.addFirst(currentNode.data); // add data to new list
+            currentNode = currentNode.next; //move to next node
+        }
+        return copiedList;
+    }
 }
