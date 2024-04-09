@@ -45,4 +45,28 @@ public class SinglyLinkedList<T> {
             tail = newNode;
         }
     }
+    public void remove(int index) {
+        // keep track of current and previous node
+        Node currentNode = head;
+        Node previousNode = null;
+
+        // iterate through list until desired index
+        for (int i = 0; i < index; i ++) {
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+        }
+
+        // Handle if we are removing the first element
+        if ( previousNode == null) {
+            head = currentNode.next;
+        } else {
+            // skip the node we want to remove
+            previousNode.next = currentNode.next;
+        }
+
+        // update tail if ness
+        if (currentNode.next == null) {
+            tail = previousNode;
+        }
+    }
 }

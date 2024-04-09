@@ -19,10 +19,25 @@ public class SinglyLinkedListTest {
     @Test
     public void addLastTest() {
         SinglyLinkedList<String> list = new SinglyLinkedList<>();
-        String str = "zipcode";
+        String str = "Zipcode";
         list.addLast(str);
 
         Assert.assertEquals(str, list.get(0));
+    }
+
+    @Test
+    public void removeTest() {
+        SinglyLinkedList<String> list = new SinglyLinkedList<>();
+        String str1 = "Zip";
+        String str2 = "Shijin";
+        String str3 = "Code";
+
+        list.addFirst(str1);
+        list.addFirst(str2);
+        list.addLast(str3);
+        list.remove(1);
+
+        Assert.assertFalse(list.contains(str2));
     }
 
 
