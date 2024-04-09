@@ -8,12 +8,22 @@ import org.junit.Test;
  */
 public class SinglyLinkedListTest {
     @Test
-    public void addTest() {
+    public void addFirstTest() {
         SinglyLinkedList<String> list = new SinglyLinkedList<>();
         String str = "zipcode";
-        list.add(str);
+        list.addFirst(str);
 
-        Assert.assertEquals(str, list.getClass(0));
+        Assert.assertEquals(str, list.get(0));
     }
+
+    @Test
+    public void addLastTest() {
+        SinglyLinkedList<String> list = new SinglyLinkedList<>();
+        String str = "zipcode";
+        list.addLast(str);
+
+        Assert.assertEquals(str, list.get(0));
+    }
+
 
 }
