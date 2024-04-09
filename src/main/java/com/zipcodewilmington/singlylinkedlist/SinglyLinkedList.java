@@ -17,6 +17,7 @@ public class SinglyLinkedList<T> {
     }
     Node head = null;
     Node tail;
+
     public void addFirst(T thingBeingAdded) {
         Node newNode = new Node(thingBeingAdded);
         newNode.next = head;
@@ -73,7 +74,7 @@ public class SinglyLinkedList<T> {
         // Start at the beginning of list
         Node node = head;
 
-        // interate as long as there are nodes to check
+        // iterate as long as there are nodes to check
         while (node != null) {
 
             // check if current node match what were looking for
@@ -125,16 +126,45 @@ public class SinglyLinkedList<T> {
         return count;
     }
     public SinglyLinkedList<T> copy() {
-        SinglyLinkedList<T> copiedList = new SinglyLinkedList<>();
+//        SinglyLinkedList<T> copiedList = new SinglyLinkedList<>();
+//
+//        //start at the beginning of original
+//        Node currentNode = head;
+//
+//        //traverse the OG list
+//        while (currentNode != null) {
+//            copiedList.addFirst(currentNode.data); // add data to new list
+//            currentNode = currentNode.next; //move to next node
+//
+//        }
+//        return copiedList;
 
-        //start at the beggining of original
-        Node currentNode = head;
 
-        //traverse the OG list
-        while (currentNode != null) {
-            copiedList.addFirst(currentNode.data); // add data to new list
-            currentNode = currentNode.next; //move to next node
-        }
-        return copiedList;
+            SinglyLinkedList<T> newList = new SinglyLinkedList<>();
+            Node node = head;
+            for(int i = 0; i < this.size(); i++){
+                newList.add(node.data);
+                node = node.next;
+            }
+
+            return newList;
     }
+
+    public void add(T thingBeingAdded){
+        // creating a new node to add to our list
+        Node newNode = new Node(thingBeingAdded);
+
+        // checking to see if our list is empty
+        if(head == null){
+            // set the newNode as the head of our list
+            head = newNode;
+            tail = newNode;
+        }
+        else{
+            tail.next = newNode;
+            tail = newNode;
+
+        }
+    }
+
 }

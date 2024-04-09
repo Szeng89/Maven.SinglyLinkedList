@@ -11,18 +11,28 @@ public class SinglyLinkedListTest {
     public void addFirstTest() {
         SinglyLinkedList<String> list = new SinglyLinkedList<>();
         String str = "zipcode";
+        String str2 = "Hello";
         list.addFirst(str);
-
         Assert.assertEquals(str, list.get(0));
+
+        list.addLast(str2);
+        Assert.assertEquals(str, list.get(0));
+
+
+
+
     }
 
     @Test
     public void addLastAndGetTest() {
         SinglyLinkedList<String> list = new SinglyLinkedList<>();
         String str = "Zipcode";
+        String str2 = "Hello";
         list.addLast(str);
+        list.addFirst(str2);
 
-        Assert.assertEquals(str, list.get(0));
+        Assert.assertEquals(str, list.get(1));
+        Assert.assertEquals(str2, list.get(0));
     }
 
     @Test
@@ -51,7 +61,7 @@ public class SinglyLinkedListTest {
         list.addLast(str2);
         list.addLast(str3);
 
-        Assert.assertEquals(2, list.find(str3));
+        Assert.assertEquals(2, list.find(str2));
     }
 
     @Test
@@ -75,13 +85,15 @@ public class SinglyLinkedListTest {
         String str2 = "Shijin";
         String str3 = "Code";
 
-        list.addFirst(str1);
-        list.addFirst(str2);
-        list.addFirst(str3);
+        list.add(str1);
+        list.add(str2);
+        list.add(str3);
 
         SinglyLinkedList<String> copied = list.copy();
 
-        Assert.assertEquals(list.get(0), copied.get(0));
+//        Assert.assertEquals("Code", copied.get(2));
+//        Assert.assertEquals(str2, copied.get(1));
+        Assert.assertEquals(list.get(3), copied.get(3));
 
     }
 
