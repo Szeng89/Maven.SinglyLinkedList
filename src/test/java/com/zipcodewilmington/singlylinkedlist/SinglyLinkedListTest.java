@@ -91,9 +91,9 @@ public class SinglyLinkedListTest {
 
         SinglyLinkedList<String> copied = list.copy();
 
-//        Assert.assertEquals("Code", copied.get(2));
-//        Assert.assertEquals(str2, copied.get(1));
-        Assert.assertEquals(list.get(3), copied.get(3));
+        Assert.assertEquals("Code", copied.get(2));
+        Assert.assertEquals(str2, copied.get(1));
+        Assert.assertEquals(list.get(2), copied.get(2));
 
     }
 
