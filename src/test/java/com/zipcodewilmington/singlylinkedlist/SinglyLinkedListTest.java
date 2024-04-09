@@ -26,14 +26,14 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    public void removeTest() {
+    public void removeAndContainsTest() {
         SinglyLinkedList<String> list = new SinglyLinkedList<>();
         String str1 = "Zip";
         String str2 = "Shijin";
         String str3 = "Code";
 
-        list.addFirst(str1);
-        list.addFirst(str2);
+        list.addLast(str1);
+        list.addLast(str2);
         list.addLast(str3);
         list.remove(1);
 

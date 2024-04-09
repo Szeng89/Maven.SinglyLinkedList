@@ -69,4 +69,21 @@ public class SinglyLinkedList<T> {
             tail = previousNode;
         }
     }
+    public boolean contains(T doesItContain) {
+        // Start at the beginning of list
+        Node node = head;
+
+        // interate as long as there are nodes to check
+        while (node != null) {
+
+            // check if current node match what were looking for
+            if (node.data.equals(doesItContain)) {
+                return true;
+            }
+
+            // move to net node
+            node = node.next;
+        }
+        return false;
+    }
 }
