@@ -90,16 +90,38 @@ public class SinglyLinkedList<T> {
         // Start at the beginning of list
         Node node = head;
 
-        int index = 0;
+        int index = 1;
 
+        // loop as long as theres nodes to check
         while (node != null) {
+
+            //if the current node has what were looking for
             if (node.data == lookingToFind) {
+
                 return index;
             }
+
+            //if no match move to next node and increase the counter
             index++;
             node = node.next;
         }
         return -1;
     }
 
+    public int size() {
+        // Start at the beginning of list
+        Node node = head;
+
+
+        int count = 0;
+
+        //loop as long as there is a next node
+        while (node != null) {
+
+            //move to next node and increment count
+            node = node.next;
+            count++;
+        }
+        return count;
+    }
 }

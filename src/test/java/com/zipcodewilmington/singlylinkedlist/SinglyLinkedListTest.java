@@ -17,7 +17,7 @@ public class SinglyLinkedListTest {
     }
 
     @Test
-    public void addLastTest() {
+    public void addLastAndGetTest() {
         SinglyLinkedList<String> list = new SinglyLinkedList<>();
         String str = "Zipcode";
         list.addLast(str);
@@ -52,6 +52,20 @@ public class SinglyLinkedListTest {
         list.addLast(str3);
 
         Assert.assertEquals(2, list.find(str3));
+    }
+
+    @Test
+    public void sizeTest() {
+        SinglyLinkedList<String> list = new SinglyLinkedList<>();
+        String str1 = "Zip";
+        String str2 = "Shijin";
+        String str3 = "Code";
+
+        list.addFirst(str1);
+        list.addFirst(str2);
+        list.addFirst(str3);
+
+        Assert.assertEquals(3, list.size());
     }
 
 
